@@ -1,4 +1,5 @@
 const express = require('express');
+const contact = require("./model/contactAPI");
 const app = express.Router();
 const nodemailer = require('nodemailer');
 // require('dotenv').config();
@@ -40,6 +41,6 @@ Contacted You With The Below Message
           res.send({msg: "Message sent succesfully"})
         }
       });
-})
+});
 
 module.exports = app;
