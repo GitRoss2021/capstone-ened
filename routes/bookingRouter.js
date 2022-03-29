@@ -1,11 +1,12 @@
 // require("dotenv").config;
 
 const express = require("express");
+const router = express.Router();
 const booking = require("../model/booking");
 const auth = require("../middleware/auth");
 const { getUser, getBooking } = require("../middleware/finders");
 
-const router = express.Router();
+
 
 // GET all products
 router.get("/", auth, async (req, res) => {

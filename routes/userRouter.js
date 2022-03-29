@@ -1,6 +1,7 @@
 // require("dotenv").config;
 
 const express = require("express");
+const router = express.Router();
 const User = require("../model/user");
 const auth = require("../middleware/auth");
 const bcrypt = require("bcrypt");
@@ -8,7 +9,7 @@ const jwt = require("jsonwebtoken");
 const { getUser, getBooking } = require("../middleware/finders");
 // const { update } = require("../module/user");
 
-const router = express.Router();
+
 
 // GET all users
 router.get("/", async (req, res) => {
