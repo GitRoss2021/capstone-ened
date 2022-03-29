@@ -1,5 +1,5 @@
 const express = require('express');
-const contact = require("./model/contactAPI");
+// const contactRouter = require('../routes/contactRouter');
 const app = express.Router();
 const nodemailer = require('nodemailer');
 // require('dotenv').config();
