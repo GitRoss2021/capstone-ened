@@ -1,14 +1,15 @@
 const express = require('express');
 // const contactRouter = require('../routes/contactRouter');
-const app = express.Router();
+const router = express.Router();
 const nodemailer = require('nodemailer');
+// const router = require('./userRouter');
 // require('dotenv').config();
 
-app.get('/', (req, res)=>{
+router.get('/', (req, res)=>{
     res.send({msg:"SEND CONTACT USING POST"})
 })
 
-app.post('/',(req,res)=> {
+router.post('/',(req,res)=> {
     const {name, email, message, subject} = req.body
     var transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -43,4 +44,4 @@ Contacted You With The Below Message
       });
 });
 
-module.exports = app;
+module.exports = router;

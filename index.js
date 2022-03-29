@@ -4,9 +4,9 @@ const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
 // const user = require("./app/module/user");
-const contactRoute = require("../routes/contactRouter");
-const userRouter = require("../routes/userRouter");
-const bookingRouter = require("../routes/bookingRouter");
+const contactRouter = require("./routes/contactRouter");
+const userRouter = require("./routes/userRouter");
+const bookingRouter = require("./routes/bookingRouter");
 // Setting up MongoDB connection
 mongoose.connect(process.env.DBURL, { useNewUrlParser: true });
 const db = mongoose.connection;
@@ -145,7 +145,7 @@ app.get("/", (req, res, next) => {
   });
 });
 app.use("/user", userRouter);
-app.use("/contact", contactRoute);
+app.use("/contact", contactRouter);
 app.use("/booking", bookingRouter);
 app.set("port", process.env.PORT || 7080);
 app.listen(app.get("port"), (server) => {
