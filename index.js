@@ -1,4 +1,4 @@
-// require("dotenv").config();
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -144,10 +144,13 @@ app.get("/", (req, res, next) => {
     },
   });
 });
+
 app.use("/user", userRouter);
 app.use("/contact", contactRouter);
 app.use("/booking", bookingRouter);
+
 app.set("port", process.env.PORT || 7080);
+
 app.listen(app.get("port"), (server) => {
   console.info(`Server listen on port ${app.get("port")}`);
 });
