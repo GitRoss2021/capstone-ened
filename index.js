@@ -4,9 +4,9 @@ const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
 // const user = require("./app/module/user");
-const contactRoute = require("./app/routes/contactAPI");
-const userRouter = require("./app/routes/userRouter");
-const bookingRouter = require("./app/routes/bookingRouter");
+const contactRoute = require("../routes/contactRouter");
+const userRouter = require("../routes/userRouter");
+const bookingRouter = require("../routes/bookingRouter");
 // Setting up MongoDB connection
 mongoose.connect(process.env.DBURL, { useNewUrlParser: true });
 const db = mongoose.connection;
