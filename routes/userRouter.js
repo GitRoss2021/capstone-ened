@@ -1,7 +1,7 @@
 // require("dotenv").config;
 
 const express = require("express");
-const User = require("../models/user");
+const User = require("../model/user");
 const auth = require("../middleware/auth");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -215,4 +215,6 @@ router.put("/cart", [auth, getBooking], async (req, res, next) => {
 });
 //clears the user cart
 router.delete("/cart", [auth, getBooking], async (req, res, next) => {});
+
+
 module.exports = router;
